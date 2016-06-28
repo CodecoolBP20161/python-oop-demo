@@ -18,6 +18,9 @@ class Vehicle():
         else:
             self.fuel_type = fuel_type
 
+    def horn(self):
+        raise(NotImplementedError)
+
 
 class TransmissionMixin():
 
@@ -50,6 +53,9 @@ class Car(Vehicle, TransmissionMixin):
         else:
             raise ValueError("invalid car type")
 
+    def horn(self):
+        print("tuuuuuuu")
+
 
 class Truck(Vehicle, TransmissionMixin):
 
@@ -57,6 +63,9 @@ class Truck(Vehicle, TransmissionMixin):
         print("Truck __init__ has been called!")
         super().__init__(*args, **kwargs)
         self.max_capacity = max_capacity
+
+    def horn(self):
+        print("duuuuuu")
 
 
 class JetPlain(Vehicle):
